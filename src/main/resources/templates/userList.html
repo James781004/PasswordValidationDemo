@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}" rel="stylesheet"/>
+    <title>User List</title>
+</head>
+<body>
+<table class="table table-striped">
+    <legend>
+        <strong>User List</strong>
+    </legend>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${userList}">
+        <th scope="row" th:text="${user.id}"></th>
+        <td><a th:href="@{/users/update/{userId}(userId=${user.id})}" th:text="${user.name}"></a></td>
+        <td th:text="${user.password}"></td>
+        <td><a class="btn btn-danger" th:href="@{/users/delete/{userId}(userId=${user.id})}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<div><a class="btn btn-primary" href="/users/create" role="button">New User</a></div>
+</body>
+</html>
