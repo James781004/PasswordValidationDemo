@@ -1,6 +1,6 @@
 # PasswordValidationDemo
 
-# Run DemoApplication.java as a Spring Boot application and use the following urls for your further api test:
+Run DemoApplication.java as a Spring Boot application and use the following urls for your further api test:
 
 html page:
 http://localhost:8080/users
