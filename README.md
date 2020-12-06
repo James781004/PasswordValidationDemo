@@ -5,7 +5,7 @@ Run DemoApplication.java as a Spring Boot application and use the following urls
 html page:
 http://localhost:8080/users
 
-swagger-ui
+swagger-ui:
 http://localhost:8080/swagger-ui.html
 
 
